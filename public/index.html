@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>자율성과지표 성과관리</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230F2747'/%3E%3Cpath d='M9 21 L16 11 L23 18' fill='none' stroke='white' stroke-width='2.4'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="app.css">
+<script>
+  (function () {
+    try {
+      var s = localStorage.getItem('kpi-theme');
+      if (s === 'dark' || s === 'light') document.documentElement.setAttribute('data-theme', s);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#/">
+      <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="7" fill="none" stroke="#fff" stroke-width="1.5"></rect><circle cx="10" cy="20" r="2.5" fill="#fff"></circle><circle cx="16" cy="11" r="2.5" fill="#fff"></circle><circle cx="22" cy="18" r="2.5" fill="#fff"></circle><path d="M10 20 L16 11 L22 18" fill="none" stroke="#fff" stroke-width="1.5"></path></svg>
+      <span class="brand-text"><span class="brand-org" id="brand-org">혁신지원사업단</span><span class="brand-name">자율성과지표 성과관리</span></span>
+    </a>
+    <nav class="nav" aria-label="주 메뉴">
+      <a href="#/" data-view="dashboard">대시보드</a>
+      <a href="#/input" data-view="input">실적 입력</a>
+      <a href="#/checks" data-view="checks">데이터 점검</a>
+      <a href="#/history" data-view="history">변경 이력</a>
+    </nav>
+    <div class="topbar-right">
+      <span class="sync" id="sync" aria-live="polite"><span class="sync-dot"></span><span id="sync-text">연결 중</span></span>
+      <time class="clock" id="clock"></time>
+      <button type="button" class="theme-btn" id="theme-btn"></button>
+      <button type="button" class="report-btn" id="report-btn" aria-haspopup="dialog"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.2 6.3L20.5 10l-6.3 2.2L12 18.5l-2.2-6.3L3.5 10l6.3-1.7z" fill="currentColor"></path><path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9z" fill="currentColor"></path></svg><span>AI 요약보고서</span></button>
+    </div>
+  </div>
+</header>
+<main class="main" id="app" tabindex="-1"></main>
+<footer class="footer">
+  <div class="footer-inner">
+    <span id="footer-org"></span>
+    <span>데이터는 Netlify에 저장되며 접속한 모든 사용자에게 공유됩니다</span>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="report-core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

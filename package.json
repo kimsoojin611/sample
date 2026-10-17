@@ -1,0 +1,15 @@
+{
+  "name": "kpi-dashboard-netlify",
+  "private": true,
+  "version": "1.0.0",
+  "description": "계명문화대학교 혁신지원사업단 자율성과지표 성과관리 (Netlify 배포판)",
+  "scripts": {
+    "dev": "netlify dev"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^11.1.4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
